@@ -59,3 +59,11 @@ li::marker{
     display: flex;
     font-family: 'Montserrat', sans-serif;
 }
+.final{
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.cancha{
+    width:15rem;
+}

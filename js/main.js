@@ -1,17 +1,28 @@
 let container = document.getElementById("titulo")
 container.innerHTML = "<h2>Bienvenido a Tarjeta de Golf Virtual</h2>"
-
+// let file = ''
 function modificarPlantillaHoles() {
     const contenedor = document.getElementById("name");
     contenedor.innerHTML = `<div>
-                                <h2>Club Hipico City Bell</h2>
+                                <select class="form-select cancha" aria-label="Default select example">
+                                <option value>Open this select menu</option>
+                                <option value="cancha.json">Club Hípico de City Bell</option>
+                                <option value="cancha2.json">UPCN</option>
+                                </select>
                             </div>`
+//     let cancha=document.getElementsByClassName("cancha")
+//     cancha.namedItem.
+//     function loadField(){
+//         console.log(cancha);
+//     }
 }
+{/* <h2>Club Hipico City Bell</h2> */}
+let file='cancha.json'
 modificarPlantillaHoles();
-
+let parDeCampo = 0
 const tabla = document.querySelector('#lista');
 function cargarCancha() {
-    fetch('./cancha.json')
+    fetch(`./assets/courses/${file}`)
         .then(respuesta => respuesta.json())
         .then(field => {
             const thead = document.createElement('tr')
@@ -23,12 +34,12 @@ function cargarCancha() {
                     <td>${Hoyo.Hoyo}</td> <td>${Hoyo.Par}</td> <td><input class="form-control score" type="number" placeholder="Score" aria-label="Score"></td>
                 `;
                 tabla.appendChild(row);
-                // console.log(row);
+                parDeCampo += Hoyo.Par
             })
+            return parDeCampo
         })
 }
 cargarCancha();
-
 
 let puntos = document.querySelector('#puntos');
 puntos.addEventListener("click", storeScore);
@@ -38,21 +49,20 @@ function storeScore() {
     for (let score of scorer) {
         total = parseInt(score.value) + total
     }
-    console.log(total)
-    even = total - 72;
+    even = total - parDeCampo;
     if (even == 0) {
         even = 'E'
-    } else if (even < 0){
-        even=`${even}`
+    } else if (even < 0) {
+        even = `${even}`
     } else {
-        even=`+${even}`
+        even = `+${even}`
     }
-    if (isNaN(total)){
+    if (isNaN(total)) {
         mostrarAlertaErr()
-        document.getElementById("final").innerHTML = `<h3>Error, verifique la carga correcta del score en todos los hoyos.</h3>`
+        document.getElementById("final").innerHTML = `<h3 class="final">Error, verifique la carga correcta del score en todos los hoyos.</h3>`
     } else {
         mostrarAlertaOk()
-        document.getElementById("final").innerHTML = `<h3>Su score final es de ${total} (${even})</h3>`
+        document.getElementById("final").innerHTML = `<h3 class="final">Su score final es de ${total} (${even})</h3>`
     }
 }
 
@@ -81,4 +91,5 @@ function borrarRonda() {
     for (let score of scorer) {
         score.value = ''
     }
+    location.reload()
 }
