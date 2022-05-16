@@ -27,7 +27,7 @@ li::marker{
     line-height: 11.1pt;
 }
 .score{
-    width:2.5rem;
+    width:5.5rem;
     display:flex;
 }
 .celda-score{
