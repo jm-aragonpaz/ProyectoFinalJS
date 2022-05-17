@@ -4,23 +4,40 @@ container.innerHTML = "<h2>Bienvenido a Tarjeta de Golf Virtual</h2>"
 function modificarPlantillaHoles() {
     const contenedor = document.getElementById("name");
     contenedor.innerHTML = `<div>
-                                <select class="form-select cancha" aria-label="Default select example">
-                                <option value>Open this select menu</option>
+                                <select id="cancha" class="form-select" "aria-label="Default select example">
+                                <option selected="Elija un campo">Elija un Campo</option>
                                 <option value="cancha.json">Club Hípico de City Bell</option>
                                 <option value="cancha2.json">UPCN</option>
                                 </select>
                             </div>`
-//     let cancha=document.getElementsByClassName("cancha")
-//     cancha.namedItem.
-//     function loadField(){
-//         console.log(cancha);
-//     }
 }
-{/* <h2>Club Hipico City Bell</h2> */}
-let file='cancha.json'
 modificarPlantillaHoles();
-let parDeCampo = 0
-const tabla = document.querySelector('#lista');
+let selection = document.querySelector('select')
+let file=undefined
+let tabla=''
+let parDeCampo=0
+selection.addEventListener('change', () => {
+    file = selection.options[selection.selectedIndex].value;
+    console.log(file)
+    return file
+})
+function waitForElement(){
+    if(typeof file !== "undefined"){
+        console.log(file)
+        tabla = document.querySelector('#lista');
+        cargarCancha();
+        let puntos = document.querySelector('#puntos');
+        puntos.addEventListener("click", storeScore);
+        let startR = document.querySelector('#round');
+        startR.addEventListener('click', borrarRonda);
+    }
+    else{
+        // console.log("Elija un campo")
+        setTimeout(waitForElement, 250);
+    }
+}
+waitForElement();
+
 function cargarCancha() {
     fetch(`./assets/courses/${file}`)
         .then(respuesta => respuesta.json())
@@ -39,10 +56,7 @@ function cargarCancha() {
             return parDeCampo
         })
 }
-cargarCancha();
 
-let puntos = document.querySelector('#puntos');
-puntos.addEventListener("click", storeScore);
 function storeScore() {
     const scorer = document.getElementsByClassName("score")
     total = 0
@@ -84,8 +98,6 @@ function mostrarAlertaErr() {
     })
 }
 
-let startR = document.querySelector('#round');
-startR.addEventListener('click', borrarRonda);
 function borrarRonda() {
     const scorer = document.getElementsByClassName("score")
     for (let score of scorer) {
