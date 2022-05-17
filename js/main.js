@@ -41,7 +41,7 @@ function waitForElement(){
         let startR = document.querySelector('#round');
         startR.addEventListener('click', borrarCampo);
         let endR = document.querySelector('#erase');
-        endR.addEventListener("click", borrarCampo);
+        endR.addEventListener("click", nuevaRonda);
     }
     else{
         setTimeout(waitForElement, 250);
@@ -124,10 +124,11 @@ function borrarCampo() {
     }
     location.reload()
 }
-function borrarRonda() {
-    const scorer = document.getElementsByClassName("erase")
+function nuevaRonda() {
+    const scorer = document.getElementsByClassName("score")
     for (let score of scorer) {
         score.value = ''
+        hcp=''
     }
-    location.reload()
+    // location.reload()
 }

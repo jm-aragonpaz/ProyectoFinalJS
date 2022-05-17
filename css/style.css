@@ -1,5 +1,6 @@
 body{
     font-family: 'Kanit', sans-serif;
+    color: #006747
 }
 ul{
     display:flex;
@@ -58,6 +59,7 @@ li::marker{
 .tit{
     display: flex;
     font-family: 'Montserrat', sans-serif;
+    color: #009b77
 }
 .final{
     margin-top: 3rem;

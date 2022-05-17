@@ -6,11 +6,11 @@ let light = document.getElementById("lightMode")
 light.addEventListener("click", goLight)
 
 function goDark() {
-    document.body.style.backgroundColor= "#333333"
-    document.body.style.color="#EEEEEE"
+    document.body.style.backgroundColor= "#006747"
+    document.body.style.color="#FFFFFF"
 }
 
 function goLight(){
-    document.body.style.backgroundColor="#EEEEEE"
-    document.body.style.color="#333333"
+    document.body.style.backgroundColor="#ffffff"
+    document.body.style.color="#006747"
 }
