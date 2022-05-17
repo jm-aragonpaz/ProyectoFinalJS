@@ -1,0 +1,20 @@
+[
+    {"id":1,"Hoyo":1,"Yd":445,"Hcp":9,"Par":4},
+    {"id":2,"Hoyo":2,"Yd":575,"Hcp":1,"Par":5},
+    {"id":3,"Hoyo":3,"Yd":350,"Hcp":11,"Par":4},
+    {"id":4,"Hoyo":4,"Yd":240,"Hcp":15,"Par":3},
+    {"id":5,"Hoyo":5,"Yd":495,"Hcp":5,"Par":4},
+    {"id":6,"Hoyo":6,"Yd":180,"Hcp":17,"Par":3},
+    {"id":7,"Hoyo":7,"Yd":450,"Hcp":13,"Par":4},
+    {"id":8,"Hoyo":8,"Yd":570,"Hcp":3,"Par":5},
+    {"id":9,"Hoyo":9,"Yd":460,"Hcp":7,"Par":4},
+    {"id":10,"Hoyo":10,"Yd":495,"Hcp":6,"Par":4},
+    {"id":11,"Hoyo":11,"Yd":520,"Hcp":12,"Par":4},
+    {"id":12,"Hoyo":12,"Yd":155,"Hcp":16,"Par":3},
+    {"id":13,"Hoyo":13,"Yd":510,"Hcp":2,"Par":5},
+    {"id":14,"Hoyo":14,"Yd":440,"Hcp":8,"Par":3},
+    {"id":15,"Hoyo":15,"Yd":550,"Hcp":4,"Par":5},
+    {"id":16,"Hoyo":16,"Yd":170,"Hcp":18,"Par":3},
+    {"id":17,"Hoyo":17,"Yd":440,"Hcp":14,"Par":4},
+    {"id":18,"Hoyo":18,"Yd":465,"Hcp":10,"Par":4}
+]

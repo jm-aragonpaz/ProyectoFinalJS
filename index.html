@@ -20,27 +20,24 @@
 <body>
     <div class="container">
     <h1 id="titulo" class="tit"></h1>
-    <!-- <button id="darkMode">Dark Mode</button> -->
     <button id="darkMode" type="button" class="btn btn-secondary">Dark Mode</button>
-    <!-- <button id="lightMode">Light Mode</button> -->
     <button id="lightMode" type="button" class="btn btn-secondary">Light mode</button>
-    <!-- <div>
-        <div>Player: <input id="player" name="Player" type="text" value="Pipo"></input></div>
 
 
     </div> -->
     <div class="mb-3 col-6">
         <label for="player" class="form-label">Jugador</label>
         <input type="text" class="form-control" id="player" placeholder="Jugador">
-      </div>
+    </div>
+    <div class="mb-3 col-6">
+        <label for="Handicap" class="form-label">Handicap</label>
+        <input type="text" class="form-control" id="handicap" placeholder="Handicap" onfocus=this.value="">
+    </div>
     <div class="scorecard-section table">
+        <div class="btn"><button id="round" class="btn btn-secondary" type="button">Limpiar Campo</button></div>
         <div class="contenedor contenedorHoles" id="name"></div>
         <div class="contenedor contenedorHoles" id="lista"></div>
         <div id="score" class="contenedor contenedorScore"></div>
-        <!-- <div id="par" class="contenedor contenedorPares">
-        </div> -->
-        <!-- <button id="puntos">Finalizar Ronda</button> -->
-        <!-- <button id="round">Limpiar Ronda</button> -->
     </div>
     <div class="d-grid gap-2 col-8 mx-auto">
         <button id="puntos" class="btn btn-secondary" type="button">Finalizar Ronda</button>
@@ -53,7 +50,6 @@
 </body>
 
 <script src="./js/dark.js"></script>
-<!-- <script src="./js/cancha.js"></script> -->
 <script defer src="./js/main.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </html>
