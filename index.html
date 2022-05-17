@@ -24,14 +24,14 @@
     <button id="lightMode" type="button" class="btn btn-secondary">Light mode</button>
 
 
-    </div> -->
+    </div>
     <div class="mb-3 col-6">
         <label for="player" class="form-label">Jugador</label>
-        <input type="text" class="form-control" id="player" placeholder="Jugador">
+        <input type="text" autocomplete="off" class="form-control" id="player" placeholder="Jugador">
     </div>
     <div class="mb-3 col-6">
         <label for="Handicap" class="form-label">Handicap</label>
-        <input type="text" class="form-control" id="handicap" placeholder="Handicap" onfocus=this.value="">
+        <input type="text" autocomplete="off" class="form-control" id="handicap" placeholder="Handicap" onfocus=this.value="">
     </div>
     <div class="scorecard-section table">
         <div class="btn"><button id="round" class="btn btn-secondary" type="button">Limpiar Campo</button></div>
@@ -41,7 +41,7 @@
     </div>
     <div class="d-grid gap-2 col-8 mx-auto">
         <button id="puntos" class="btn btn-secondary" type="button">Finalizar Ronda</button>
-        <button id="round" class="btn btn-secondary" type="button">Limpiar Ronda</button>
+        <button id="erase" class="btn btn-secondary" type="button">Nueva Ronda</button>
     </div>
 
     <div id="final"></div>

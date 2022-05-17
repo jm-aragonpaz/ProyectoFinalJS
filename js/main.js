@@ -6,6 +6,19 @@ hcp.addEventListener('change', () =>{
     handicap = parseInt(hcp.value);
     return handicap
 })
+modificarPlantillaHoles();
+let selection = document.querySelector('select')
+let file=undefined
+let tabla=''
+let parDeCampo=0
+selection.addEventListener('change', () => {
+    file = selection.options[selection.selectedIndex].value;
+    return file
+})
+waitForElement();
+
+
+
 
 function modificarPlantillaHoles() {
     const contenedor = document.getElementById("name");
@@ -18,15 +31,7 @@ function modificarPlantillaHoles() {
                                 </select>
                             </div>`
 }
-modificarPlantillaHoles();
-let selection = document.querySelector('select')
-let file=undefined
-let tabla=''
-let parDeCampo=0
-selection.addEventListener('change', () => {
-    file = selection.options[selection.selectedIndex].value;
-    return file
-})
+
 function waitForElement(){
     if(typeof file !== "undefined"){
         tabla = document.querySelector('#lista');
@@ -34,13 +39,15 @@ function waitForElement(){
         let puntos = document.querySelector('#puntos');
         puntos.addEventListener("click", storeScore);
         let startR = document.querySelector('#round');
-        startR.addEventListener('click', borrarRonda);
+        startR.addEventListener('click', borrarCampo);
+        let endR = document.querySelector('#erase');
+        endR.addEventListener("click", borrarCampo);
     }
     else{
         setTimeout(waitForElement, 250);
     }
 }
-waitForElement();
+
 
 function cargarCancha() {
     fetch(`./assets/courses/${file}`)
@@ -84,7 +91,7 @@ function storeScore() {
     } else {
         neto = `+${neto}`
     }
-    if (isNaN(total)) {
+    if (isNaN(total) || (isNaN(total2))) {
         mostrarAlertaErr()
     } else {
         mostrarAlertaOk()
@@ -103,17 +110,24 @@ function mostrarAlertaOk() {
 function mostrarAlertaErr() {
     Swal.fire({
         title: 'Error',
-        text: `Verifique la carga correcta del score en todos los hoyos.`,
+        text: `Verifique la carga correcta del handicap y del score en todos los hoyos.`,
         icon: 'error',
         confirmButtonText: 'Ok',
     })
 }
 
-function borrarRonda() {
+function borrarCampo() {
     const scorer = document.getElementsByClassName("score")
     for (let score of scorer) {
         score.value = ''
         handicap=''
+    }
+    location.reload()
+}
+function borrarRonda() {
+    const scorer = document.getElementsByClassName("erase")
+    for (let score of scorer) {
+        score.value = ''
     }
     location.reload()
 }
