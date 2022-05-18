@@ -1,5 +1,3 @@
-let container = document.getElementById("titulo")
-container.innerHTML = "<h2>Bienvenido a Tarjeta de Golf Virtual</h2>"
 let handicap=''
 let hcp = document.getElementById("handicap")
 hcp.addEventListener('change', () =>{

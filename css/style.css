@@ -69,3 +69,7 @@ li::marker{
 .cancha{
     width:15rem;
 }
+
+.table{
+    border-top: none;
+}
