@@ -87,6 +87,9 @@ body{
     color: #006747;
     text-align: center;
 }
+h1{
+    justify-content: center;
+}
 .temas{
     display: flex;
     flex-wrap: wrap;
