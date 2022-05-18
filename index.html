@@ -18,19 +18,21 @@
 
 <body>
     <div class="container">
-    <h1 id="titulo" class="tit">Bienvenido a Tarjeta de Golf Virtual</h1>
+        <div class="row">
+            <h1 id="titulo" class="tit">Bienvenido a Tarjeta de Golf Virtual</h1>
+        </div>
     </div>
-    <div>
+
+    <div class="temas">
     <button id="darkMode" type="button" class="btn btn-secondary">Dark Mode</button>
     <button id="lightMode" type="button" class="btn btn-secondary">Light mode</button>
-
-
     </div>
-    <div class="mb-3 col-6">
+
+    <div class="mb-3 col-11 d-grid gap-2 col-8 mx-auto">
         <label for="player" class="form-label">Jugador</label>
         <input type="text" autocomplete="off" class="form-control" id="player" placeholder="Jugador">
     </div>
-    <div class="mb-3 col-6">
+    <div class="mb-3 col-11 d-grid gap-2 col-8 mx-auto">
         <label for="Handicap" class="form-label">Handicap</label>
         <input type="text" autocomplete="off" class="form-control" id="handicap" placeholder="Handicap" onfocus=this.value="">
     </div>
@@ -38,10 +40,15 @@
         <div class="btn"><button id="round" class="btn btn-secondary" type="button">Limpiar Campo</button></div>
         <div class="contenedor contenedorHoles" id="name"></div>
     </div>
-    <div class="scorecard-section table">
-        <div class="contenedor contenedorHoles" id="lista"></div>
-        <div id="score" class="contenedor contenedorScore"></div>
+    <div class="container">
+        <div class="row md-8">
+            <div class="scorecard-section table col-md-12">
+                <div class="contenedor contenedorHoles" id="lista"></div>
+                <!-- <div id="score" class="contenedor contenedorScore"></div> -->
+            </div>
+        </div>
     </div>
+
     <div class="d-grid gap-2 col-8 mx-auto">
         <button id="puntos" class="btn btn-secondary" type="button">Finalizar Ronda</button>
         <button id="erase" class="btn btn-secondary" type="button">Nueva Ronda</button>

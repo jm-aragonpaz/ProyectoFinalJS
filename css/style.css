@@ -1,36 +1,94 @@
 body{
     font-family: 'Kanit', sans-serif;
-    color: #006747
+    color: #006747;
+    font-weight: 600;
+    background-color:#f7f7f7;
+
 }
-ul{
+.btn{
+    font-weight: 600;
+}
+#darkMode{
+    background-color:#f7f7f7;
+    color:#006747;
+    border-color:#006747;
+}
+#lightMode{
+    background-color:#f7f7f7;
+    color:#006747;
+    border-color:#006747;
+}
+#round{
+    background-color:#f7f7f7;
+    color:#006747;
+    border-color:#006747;
+}
+#cancha{
+    background-color:#f7f7f7;
+    color:#006747;
+    border-color:#006747;
+}
+#puntos{
+    background-color:#f7f7f7;
+    color:#006747;
+    border-color:#006747;
+}
+#erase{
+    background-color:#f7f7f7;
+    color:#006747;
+    border-color:#006747;
+}
+#lista{
+    background-color:#f7f7f7;
+    color:#006747;
+    border-color:#006747;
+    justify-content: center;
+}
+#player{
+    background-color:#f7f7f7;
+    color:#006747;
+    border-color:#006747;
+    justify-content: center;
+}
+#handicap{
+    background-color:#f7f7f7;
+    color:#006747;
+    border-color:#006747;
+    justify-content: center;
+}
+.col-11{
+    text-align: -webkit-center;
+}
+.form-control{
+    justify-content: center;
+}
+/* ul{
     display:flex;
     justify-content:space-between;
     list-style-type: none;
     margin-bottom: 0.1rem;
-}
-li::marker{
+} */
+/* li::marker{
     marker: none;
-}
-.pares{
+} */
+/* .pares{
     display:flex;
     justify-content: space-between;
 
-}
-.celda{
+} */
+/* .celda{
     marker:none;
-    /* display:table-cell; */
     display: table-header-group;
-    /* background-color: #F2F4F7; */
     height: 18pt;
     margin-bottom: 10pt;
     font-size: 8pt;
     letter-spacing: 0pt;
     line-height: 11.1pt;
-}
-.score{
+} */
+/* .score{
     width:5.5rem;
     display:flex;
-}
+} */
 .celda-score{
     background-color:none !important;
 }
@@ -59,7 +117,17 @@ li::marker{
 .tit{
     display: flex;
     font-family: 'Montserrat', sans-serif;
-    color: #009b77
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #006747;
+    text-align: center;
+}
+.temas{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 3rem;
+
 }
 .final{
     margin-top: 3rem;
@@ -72,4 +140,5 @@ li::marker{
 
 .table{
     border-top: none;
+    text-align: -webkit-center;
 }
